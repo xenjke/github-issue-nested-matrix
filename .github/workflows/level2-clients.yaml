@@ -1,0 +1,17 @@
+name: Level 2 - Matrix on Clients
+
+on:
+  workflow_call:
+    inputs:
+      market:
+        required: true
+        type: string
+
+jobs:
+  matrix-clients:
+    strategy:
+      matrix:
+        client: ['client-x', 'client-y']
+    uses: ./.github/workflows/level3-services.yaml
+    with:
+      client: ${{ matrix.client }}

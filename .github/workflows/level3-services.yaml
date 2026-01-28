@@ -1,0 +1,17 @@
+name: Level 3 - Matrix on Services
+
+on:
+  workflow_call:
+    inputs:
+      client:
+        required: true
+        type: string
+
+jobs:
+  matrix-services:
+    strategy:
+      matrix:
+        service: ['service-1', 'service-2']
+    uses: ./.github/workflows/level4-envs.yaml
+    with:
+      service: ${{ matrix.service }}

@@ -1,0 +1,17 @@
+name: Level 4 - Matrix on Environments
+
+on:
+  workflow_call:
+    inputs:
+      service:
+        required: true
+        type: string
+
+jobs:
+  matrix-environments:
+    strategy:
+      matrix:
+        env_type: ['sandbox', 'test']
+    uses: ./.github/workflows/level5-final.yaml
+    with:
+      env-type: ${{ matrix.env_type }}

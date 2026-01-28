@@ -1,0 +1,17 @@
+name: Level 5 - Final Step
+
+on:
+  workflow_call:
+    inputs:
+      env-type:
+        required: true
+        type: string
+
+jobs:
+  final-step:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Final no-op
+        run: |
+          echo "Level 5: env_type=${{ inputs.env-type }}"
+          echo "SUCCESS: Reached the final level!"

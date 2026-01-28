@@ -1,0 +1,13 @@
+name: Test 4-Level Nested Matrix
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-nested-matrix:
+    name: Start 4-level matrix test
+    uses: ./.github/workflows/level1-markets.yaml

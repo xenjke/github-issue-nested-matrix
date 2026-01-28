@@ -1,0 +1,14 @@
+name: Level 1 - Matrix on Markets
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  matrix-markets:
+    strategy:
+      matrix:
+        market: ['market-a', 'market-b']
+    uses: ./.github/workflows/level2-clients.yaml
+    with:
+      market: ${{ matrix.market }}
